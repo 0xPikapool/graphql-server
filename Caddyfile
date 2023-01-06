@@ -2,14 +2,14 @@
 	order rate_limit before basicauth
 }
 
-:5500
+:80 {
+	reverse_proxy :4000
 
-rate_limit {
-	zone dynamic {
-		key    "{ http.request.remote.host }"
-		events 2
-		window 1s
-  }
+	rate_limit {
+		zone dynamic {
+			key    "{ http.request.remote.host }"
+			events 2
+			window 1s
+		}
+	}
 }
-
-reverse_proxy :5000
