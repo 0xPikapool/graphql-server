@@ -3,8 +3,22 @@ services:
   postgraphile:
     build:
       context: .
-      dockerfile: './Dockerfile'
+      dockerfile: './dockerfiles/postgraphile.dockerfile'
     env_file:
       - .env
-    network_mode: "host"
+    network_mode: host
     restart: always
+  caddy:
+    build:
+      context: .
+      dockerfile: './dockerfiles/caddy.dockerfile'
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

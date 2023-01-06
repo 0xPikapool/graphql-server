@@ -1,6 +1,12 @@
 # GQL Server
 
-Uses PostGraphile to create GraphQL access for Postgres
+Uses Postgraphile to create GraphQL access for Postgres.
+
+Postgraphile sits behind a Caddy reverse-proxy with some conservative rate-limit rules applied.
+
+## Rate-limit
+
+Using [caddy-ratelimit](https://github.com/mholt/caddy-ratelimit)
 
 ## Persisted Operations
 
