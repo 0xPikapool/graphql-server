@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  postgraphile:
+    build:
+      context: .
+      dockerfile: './Dockerfile'
+    env_file:
+      - .env
+    network_mode: "host"
+    restart: always
