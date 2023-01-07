@@ -31,4 +31,9 @@ app.use(
   ),
 );
 
+app.get('/pika', (req, res) => {
+  console.log('pikachu');
+  res.status(200).send('chu');
+});
+
 app.listen(process.env.PORT || 5000);
