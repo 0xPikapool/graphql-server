@@ -15,4 +15,5 @@
 	log {
 		format console
 	}
+	uri strip_prefix /v0
 }
