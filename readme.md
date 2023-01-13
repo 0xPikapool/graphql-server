@@ -6,11 +6,11 @@ Postgraphile sits behind a Caddy reverse-proxy with some conservative rate-limit
 
 ## Rate-limit
 
-Using [caddy-ratelimit](https://github.com/mholt/caddy-ratelimit)
+Per-IP ratelimit using [caddy-ratelimit](https://github.com/mholt/caddy-ratelimit).
 
 ## Persisted Operations
 
-[Persisted operations](https://github.com/graphile/persisted-operations) to prevent malicious queries
+Only whitelisted operations are permitted, to prevent malicious queries. See [Persisted operations](https://github.com/graphile/persisted-operations).
 
 ## Run
 
